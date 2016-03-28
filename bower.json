@@ -1,0 +1,16 @@
+{
+  "name": "twmj-static",
+  "version": "0.0.1",
+  "authors": [
+    "nineohnine <rotzbrent@gmail.com>"
+  ],
+  "description": "Static site for TWMJ",
+  "license": "None",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

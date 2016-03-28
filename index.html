@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="uber">
+  <head>
+
+    <base href="/">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Uber Explorer</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/bower_components/base/dist/style.css">
+    <link rel="stylesheet" href="/src/css/uber.css">
+
+    <script src="/jspm_packages/system.js"></script>
+    <script src="/config.js"></script>
+    <script src="/dist/build.js"></script>
+    <script>
+
+     function initApp(){
+        System.import('./src/app');
+      }
+
+    </script>
+    <script
+      src="//maps.googleapis.com/maps/api/js?key=AIzaSyBand580Qi8cYFUdBgw1yHIzQm647mkOWU&libraries=geometry,visualization,drawing&callback=initApp">
+    </script>
+
+    <script src="/src/js/CanvasLayer.js"></script>
+    <script src="/src/js/ShaderProgram.js"></script>
+    <script src="/src/js/libtess.cat.js"></script>
+    <script src="/src/js/WebGLLayer.js"></script>
+
+
+  </head>
+
+  <body>
+
+    <section class="contain" ui-view>
+    </section>
+
+
+  </body>
+
+</html>

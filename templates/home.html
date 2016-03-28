@@ -1,0 +1,22 @@
+<section layout="column" flex="90" layout-align="center center">
+  <h1 style="font-family: 'Patua One', cursive;" class="md-display-3">this was my jam.</h1>
+  <div>
+    <md-card style="" class="md-whiteframe-z1 md-hue-2">
+      <md-card-content layout-padding layout="row" layout-sm="column">
+        <md-input-container style="width:100px; margin-right:5px; margin-left:5px;">
+          <label>Birth Month</label>
+          <input type="number" ng-model="h.birthdate.month" min="1" max="12">
+        </md-input-container>
+        <md-input-container style="width:90px; margin-right:5px; margin-left:5px;">
+          <label>Birth Day</label>
+          <input type="number" ng-model="h.birthdate.day" min="1" max="31">
+        </md-input-container>
+        <md-input-container style="width:90px; margin-right:5px; margin-left:5px;">
+          <label>Birth Year</label>
+          <input type="number" ng-model="h.birthdate.year" min="1930" max="2015">
+        </md-input-container>
+        <md-button md-no-ink style="width:auto;" class="md-raised md-primary" ng-click="h.play()">Listen</md-button>
+      </md-card-content>
+    </md-card>
+  </div>
+</section>

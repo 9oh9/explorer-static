@@ -1,0 +1,102 @@
+
+<div id="loading" ng-if="m.loading" >
+  <h3 style="width:195px;" class="center-element">loading ride data ...</h3>
+</div>
+
+<div id="directions">
+  <h4>Directions</h3>
+  <ul style="padding:12px;">
+    <li>Select draw tool.</li>
+    <li>Draw a polygon.</li>
+    <li>Click populate data.</li>
+    <li>Filter by a date range.</li>
+  </ul>
+</div>
+
+<div id="statistics" class="flex flex-hor flex-start">
+  <span style="display:inline; padding:4px;">
+    <label><b>Data Set: </b></label>
+    <p style="display:inline;">{{  m.dataSetSize || 0 }}</p>
+  </span>
+  <span style="display:inline; padding:4px;">
+    <label><b>Filtered Set: </b></label>
+    <p style="display:inline;">{{  m.subSetSize || 0 }}</p>
+  </span>
+</div>
+
+<div id="side_dash">
+
+  <div id="dash" class="flex flex-vert flex-start">
+      <div class="flex flex-hor flex-between" style="padding:4px;">
+        <div id="date-dash">
+            <span class="select inline-block" style="width:75px; vertical-align:middle; height:25px; font-size:.8em;">
+              <select name="custom-select" ng-model="m.monthStart" id="month-start" style="height:25px;">
+                <option value="-">Month</option>
+                <option value="01">1</option>
+                <option value="02">2</option>
+                <option value="03">3</option>
+                <option value="04">4</option>
+                <option value="05">5</option>
+                <option value="06">6</option>
+                <option value="07">7</option>
+                <option value="08">8</option>
+                <option value="09">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+              </select>
+            </span>
+            <input id="day-start" placeholder="dd" ng-model="m.dayStart" style="width:30px; height:25px; font-size:.8em;" type="number" />
+            <input id="year-start" placeholder="yyyy" ng-model="m.yearStart" style="width:60px; height:25px; font-size:.8em;" type="number" />
+            <span> - </span>
+            <span class="select inline-block" style="vertical-align:middle;width:75px; height:25px; font-size:.8em;">
+              <select id="month-end" ng-model="m.monthEnd" style="height:25px;">
+                  <option value="-">Month</option>
+                  <option value="01">1</option>
+                  <option value="02">2</option>
+                  <option value="03">3</option>
+                  <option value="04">4</option>
+                  <option value="05">5</option>
+                  <option value="06">6</option>
+                  <option value="07">7</option>
+                  <option value="08">8</option>
+                  <option value="09">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+              </select>
+            </span>
+            <input id="day-end" placeholder="dd" ng-model="m.dayEnd" style="width:30px; height:25px; font-size:.8em;" type="number" />
+            <input id="year-end" placeholder="yyyy" ng-model="m.yearEnd"  style="width:60px; height:25px; font-size:.8em;" type="number" />
+
+            <span class="select inline-block" style="vertical-align:middle;width:75px; height:25px; font-size:.8em;">
+              <select id="color-select" ng-model="m.color" style="height:25px;">
+                  <option value="-">Color</option>
+                  <option value="0">Green</option>
+                  <option value="1">Red</option>
+              </select>
+            </span>
+            <button class="button dash-btn" ng-click="m.filterByMonth()">Filter Rides</button>
+        </div>
+        <div class="flex flex-hor flex-center">
+          <button class="button dash-btn" ng-click="m.loadRideData()">Populate Ride Data</button>
+          <!--
+          <button class="button dash-btn" ng-click="m.clearMap()">Clear Map</button>
+          -->
+        </div>
+      </div>
+  </div>
+
+</div>
+
+<ui-gmap-google-map pan="1" center="m.center" control="m.mapService.mapControl" zoom="m.zoom" options="m.opts">
+
+  <ui-gmap-drawing-manager
+      options="m.mapService.dmOpts"
+      control="m.mapService.dm">
+  </ui-gmap-drawing-manager>
+
+</ui-gmap-google-map>
+
+
+
