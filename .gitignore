@@ -1,3 +1,10 @@
 node_modules/*
 jspm_packages/*
 bower_components/*
+
+!jspm_packages/system.js
+!jspm_packages/system.src.js
+!jspm_packages/system.js.map
+!jspm_packages/es6-module-loader.src.js
+!jspm_packages/es6-module-loader.js
+!jspm_packages/es6-module-loader.js.map
