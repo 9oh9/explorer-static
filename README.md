@@ -1,2 +1,2 @@
-# twmj-static
-Angular front end for thiswasmyj.am
+# explorer-static
+static map app
